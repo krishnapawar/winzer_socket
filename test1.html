@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Data</title>
+</head>
+<body>
+  <h1>User Data</h1>
+  <div id="userData"></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    // Emit the 'get-user-data' event with the user's ID
+    const userId = 'userA'; // Replace with the actual user identifier
+    socket.emit('get-user-data', userId);
+
+    socket.on('user-data', (data) => {
+      const userDataDiv = document.getElementById('userData');
+      userDataDiv.innerHTML = `<p>User ID: ${data.id}</p>
+                                <p>Name: ${data.name}</p>
+                                <p>Email: ${data.email}</p>`;
+    });
+  </script>
+</body>
+</html>

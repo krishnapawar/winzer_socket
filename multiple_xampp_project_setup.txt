@@ -1,0 +1,303 @@
+//remove public path in laravel
+
+//put this in .htacces in base diractory
+<IfModule mod_rewrite.c>
+
+  # Turn Off mod_dir Redirect For Existing Directories
+  DirectorySlash Off
+  
+  # Rewrite For Public Folder
+  RewriteEngine on
+  RewriteRule ^(.*)$ public/$1 [L]
+
+</IfModule>
+
+//unstall ubunto sofware
+ sudo apt-get --purge remove skypeforlinux
+
+// two xampp install
+cd /home/[username]/Downloads
+chmod 755 [package name]
+ls -l [package name]
+sudo ./[package name]
+
+// move lampp 
+mv lampp lampp8
+// other xampp install
+cd /home/[username]/Downloads
+chmod 755 [package name]
+ls -l [package name]
+sudo ./[package name]
+
+
+
+
+
+// start xampp other 
+ln -s lampp8 lampp
+sudo /opt/lampp/lampp start 
+// stop xampp 
+sudo /opt/lampp/lampp stop
+cd /opt 
+rm lampp
+
+// database import
+mysql -h 127.0.0.1 -P 3306 -u root -p elatih< elatih_backup_01122022.sql
+
+
+This should completely remove any package with a name that starts 
+
+
+with php and anything related to it.
+
+sudo apt-get purge 'php*'
+
+
+unstall app
+sudo /opt/lampp8/uninstall
+
+rmevo folder 
+sudo rm -r /opt/lampp8
+
+to solve if requie pacage is not install
+
+sudo apt install php-mbstring
+
+laravel ui boostrap
+
+composer require laravel/ui
+
+// Generate basic scaffolding...
+php artisan ui bootstrap
+
+// Generate login / registration scaffolding...
+php artisan ui bootstrap --auth
+
+npm install
+npm run dev
+
+ignor  laravel error 
+--ignore-platform-req=ext-dom --ignore-platform-req=ext-xml --ignore-platform-req=ext-xmlwriter
+
+to sovle my sql drive error
+sudo apt install -y php7.3-mysqli
+
+laravel error :- Class "DOMDocument" not found
+You need to install the DOM extension. You can do so on Debian / Ubuntu using
+sudo apt-get install php-dom
+
+//fix mysql server issue on server (set global variable)
+
+$ sudo mysql -u USERNAME -p PASSWORD -h HOSTNAMEORIP DATABASENAME
+
+SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+
+
+//server command 
+
+//install node by cmd
+
+1) curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
+
+2) cat /etc/apt/sources.list.d/nodesource.list
+
+3) sudo apt -y install nodejs
+
+4) node  -v
+
+
+// 
+database_name=>gurudwara_db
+password=>8wN3NTOz98PsZ93
+
+//to connect mysql in terminal
+$ sudo mysql -u root -p
+
+
+//to view databases
+$ SHOW DATABASES; 
+
+//we can use the below command to access the database that enables us to create a table and other database objects.
+also swich database
+$ USE emplyeedb;  
+
+//to show all tables in database
+$ SHOW TABLES; 
+
+
+//import database by cmd
+$ sudo mysql -u root -p  gurudwara_db < gurudwara/gurudwara_db.sql
+
+//connect database by password
+-u: username
+-p: password (**no space between -p and the password text**)
+-h: host
+last one is name of the database that you wanted to connect. 
+// sudo mysql -u root -p8wN3NTOz98PsZ93 -h localhost gurudwara_db
+
+$ sudo mysql -u USERNAME -p PASSWORD -h HOSTNAMEORIP DATABASENAME 
+
+//for close mysql => 
+controle + D
+
+
+//On AWS Server Error=>Client does not support authentication protocol requested by server; consider upgrading MySQL client
+Where root as your user localhost as your URL and password as your password
+
+$ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '8wN3NTOz98PsZ93';
+
+
+//some important creadentail
+
+Firebase detail
+
+medwire2023@gmail.com
+Gaurav@123
+
+---------------------------
+ec2:-
+ip:- 13.235.153.225
+port:- 22
+user:- ubuntu
+pass:- medwire-prod.pem
+app_dir:- /var/www/html
+
+URL:- https://app.medwire.in/
+URL:- https://api.medwire.in/
+URL:- https://www.medwire.in/
+
+---------------------------
+Database:-
+RDS host:- medwire-rds-instance.cxd1rowwbcnx.eu-west-2.rds.amazonaws.com
+user:- admin
+pass:- wM54RwzYYdEgeUuV
+
+-----------------------------------------------
+
+usefull command for project
+
+1. sudo ssh -i medwire-prod.pem ubuntu@13.235.153.225
+2. cd /var/www/html
+3. pm2 restart index
+4. ps -a
+5. kill node number
+6. for file edit vim filename
+7. for file check ls filename
+
+database connecting command
+
+1. mysql -uadmin -p -h medwire-rds-instance.c43meoje0rlx.ap-south-1.rds.amazonaws.com
+2. show databases;
+
+
+
+
+
+//git command 
+
+id password
+
+wnsdipesh
+Webnsoft@1234
+
+
+code commit :
+
+check branch
+
+git branch
+git checkout krishna-wns
+git add -A
+git commit -am "task subject"
+git push origin krishna-wns
+
+git checkout main
+git pull origin main 
+git checkout krishna-wns
+git merge main
+
+
+to uncommit or remove to added files or code
+=> git stash
+ 
+ 
+There was a bug in --rebase-merges that was fixed in Git
+=> git rebase --rebase-merges
+
+Perform garbage collection so Git can clean up the mess it's made of itself
+
+=> git gc
+
+Verify the connectivity and validity of the objects in the database
+
+=> git fsck --full
+
+Remove the empty file. I figured what the heck; it's blank anyway.
+
+=> rm .git/objects/8b/61d0135d3195966b443f6c73fb68466264c68e
+
+=> rm: remove write-protected regular empty file `.git/objects/8b/61d0135d3195966b443f6c73fb68466264c68e'? y
+
+
+
+Prune all entries from the reference log
+
+=> git reflog expire --expire=0 --all
+
+Delete the reference to the named hash
+
+=> git update-ref -d <your hash here>
+
+
+Run garbage collection again, throwing away all old deltas. This will take longer than the first time, but is much more thorough at optimizing the repository
+
+=> git gc --aggressive
+
+Update the list of remotes, deleting references to branches that no longer exist
+
+=> git remote update --prune
+
+
+If you want to revert the commit WITHOUT throwing away work, use the --soft flag instead of --hard
+
+git reset --soft HEAD^
+
+
+Undo git add for uncommitted changes with:
+
+git reset <file>
+
+To unstage all changes for all files:
+
+git reset
+
+Radiology login on production(production)
+radio{
+		email : best123@mailinator.com,
+		password : Test@123
+	}
+	
+lab{
+		email: katro123@mailinator.com,
+		password : Test@123
+}
+
+
+
+#skyp 
+
+krishna@webnsoftsolution.com
+pass: webnsoft@112
+
+
+vineet sir gmail Account 
+
+Id: vineet3010.wns@gmail.com
+Pass: Vineetwns@123
+
+
+//ccanue pyment get way
+1)auth/addAppointmentDoctor
+2)auth/payment-appointment
+3)auth/payment-appointment-callback
+

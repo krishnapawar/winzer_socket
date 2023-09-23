@@ -2,6 +2,7 @@ const express = require("express");
 const { Server } = require("socket.io");
 const app = require('express')();
 const http = require('http').createServer(app);
+const pool =require('db');
 const io = require('socket.io')(http, {
   cors: {
     origins: ['http://localhost:8080','http://localhost:8081','*']
@@ -9,7 +10,7 @@ const io = require('socket.io')(http, {
 });
 const cors = require("cors");
 const port = 3000;
-var mysql = require("mysql");
+
 app.use(cors());
 
 app.get("/", (req, res) => {
@@ -56,17 +57,6 @@ io.on("connection", async (socket) => {
 });
 
 // const mysql = require("mysql2");
-
-// Create a connection pool
-const pool = mysql.createPool({
-  host: '68.178.147.171',
-  user: 'ludo',
-  password: 'NdMW.n~,iIQQ',
-  database: 'ludo',
-  waitForConnections: true,
-  connectionLimit: 10, // Adjust this limit based on your needs
-  queueLimit: 0,      // 0 means unlimited queue
-});
 
 function queryDatabase(sql) {
   return new Promise((resolve, reject) => {
